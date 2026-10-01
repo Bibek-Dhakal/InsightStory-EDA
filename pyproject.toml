@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "insightstory-eda"
-version = "0.1.0"
+version = "0.2.0"
 description = "SQL-driven EDA, RFM segmentation and executive deck builder for e-commerce customer behaviour"
 readme = "README.md"
 requires-python = ">=3.10"
