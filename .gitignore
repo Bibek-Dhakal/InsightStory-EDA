@@ -1,0 +1,42 @@
+# Environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# artifacts
+PATCH.md
+automation_profile/temp.md
+*.patch
+*.diff
+automation_profile
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Generated data and outputs
+data/*.duckdb
+data/*.duckdb.wal
+outputs/
+
+# IDE / OS
+.idea/
+.vscode/
+.vscode-test/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db

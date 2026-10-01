@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "insightstory-eda"
+version = "0.1.0"
+description = "SQL-driven EDA, RFM segmentation and executive deck builder for e-commerce customer behaviour"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Bibek Dhakal" }]
+dependencies = [
+    "duckdb",
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "seaborn",
+    "python-dotenv",
+    "python-pptx",
+]
+
+[project.optional-dependencies]
+dev = ["ruff", "pre-commit"]
+notebooks = ["jupyterlab", "ipykernel"]
+
+[project.scripts]
+insightstory = "insightstory.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/insightstory"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["B008", "E501"]
