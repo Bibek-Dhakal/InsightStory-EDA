@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "insightstory-eda"
-version = "0.1.0"
+version = "0.2.0"
 description = "SQL-driven exploratory analysis and executive data storytelling on synthetic e-commerce data."
 readme = "README.md"
 requires-python = ">=3.10"
