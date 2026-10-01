@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "insightstory-eda"
+version = "0.1.0"
+description = "SQL-driven exploratory analysis and executive data storytelling on synthetic e-commerce data."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Bibek Dhakal" }]
+dependencies = [
+    "duckdb",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "python-dotenv",
+    "python-pptx",
+    "seaborn",
+]
+
+[project.optional-dependencies]
+notebooks = ["ipykernel", "jupyterlab"]
+dev = ["pre-commit", "pytest", "pytest-cov", "ruff"]
+
+[project.scripts]
+insightstory = "insightstory.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+extend-exclude = ["*.ipynb"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["B008", "E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["insightstory"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra --cov=insightstory --cov-report=term-missing"
